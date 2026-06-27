@@ -34,7 +34,7 @@ export async function POST(req: Request) {
       service: "gmail",
       auth: {
         user: contactEmail,
-        pass: gmailAppPassword,
+        pass: gmailAppPassword.replace(/\s/g, ""),
       },
     });
 
