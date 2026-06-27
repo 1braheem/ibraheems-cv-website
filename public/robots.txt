@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://ibraheemaziz.dev/sitemap.xml 
+Sitemap: https://ibraheems-cv-website.vercel.app/sitemap.xml
