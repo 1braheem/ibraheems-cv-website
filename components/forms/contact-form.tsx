@@ -26,6 +26,7 @@ const formSchema = z.object({
   message: z.string().min(10, {
     message: "Please write something more descriptive.",
   }),
+  website: z.string().max(0).optional(),
 });
 
 export function ContactForm() {
@@ -39,6 +40,7 @@ export function ContactForm() {
       name: "",
       email: "",
       message: "",
+      website: "",
     },
   });
 
@@ -53,18 +55,26 @@ export function ContactForm() {
         body: JSON.stringify({ ...values, social: "" }),
       });
 
-      form.reset();
-
-      if (response.status === 200) {
+      if (response.ok) {
+        form.reset();
         storeModal.onOpen({
-          title: "Thankyou!",
+          title: "Thank you!",
           description:
             "Your message has been received! I appreciate your contact and will get back to you shortly.",
           icon: Icons.successAnimated,
         });
+        return;
       }
+
+      throw new Error("Unable to deliver message");
     } catch (err) {
       console.log("Err!", err);
+      storeModal.onOpen({
+        title: "Message not sent",
+        description:
+          "The contact form is temporarily unavailable. Please email me directly instead.",
+        icon: Icons.infoMark,
+      });
     }
   }
 
@@ -74,6 +84,14 @@ export function ContactForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 min-w-full"
       >
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+          {...form.register("website")}
+        />
         <FormField
           control={form.control}
           name="name"
@@ -116,7 +134,9 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={form.formState.isSubmitting}>
+          {form.formState.isSubmitting ? "Sending..." : "Submit"}
+        </Button>
       </form>
     </Form>
   );

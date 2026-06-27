@@ -24,6 +24,6 @@ export const SocialLinks: SocialInterface[] = [
     name: "Gmail",
     username: "ibraheemaziz3568",
     icon: Icons.gmail,
-    link: "mailto:ibraheemaziz3568@gmail.com",
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=ibraheemaziz3568@gmail.com",
   },
 ];
