@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 import * as React from "react";
 
 import { Icons } from "@/components/common/icons";
@@ -15,80 +14,72 @@ interface MainNavProps {
   children?: React.ReactNode;
 }
 
-// Animation variants for the navigation items
-const navItemVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.1 * i,
-      duration: 0.5,
-      ease: "easeOut" as const,
-    },
-  }),
-};
-
 export function MainNav({ items, children }: MainNavProps) {
-  const segment = useSelectedLayoutSegment();
-  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
   const pathname = usePathname();
+  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
 
   React.useEffect(() => {
     setShowMobileMenu(false);
   }, [pathname]);
 
   return (
-    <div className="flex gap-6 md:gap-10">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Link href="/" className="hidden items-center space-x-2 md:flex">
-          <span className="font-heading text-2xl">{siteConfig.brandName}</span>
-        </Link>
-      </motion.div>
+    <div className="flex min-w-0 flex-1 items-center gap-8">
+      <Link href="/" className="group flex min-w-0 items-center gap-3">
+        <span className="flex h-9 w-9 flex-none items-center justify-center border border-foreground bg-foreground text-xs font-bold text-background transition-colors group-hover:bg-background group-hover:text-foreground">
+          IA
+        </span>
+        <span className="min-w-0 leading-none">
+          <span className="block truncate font-heading text-base">
+            {siteConfig.brandName}
+          </span>
+          <span className="mt-1 hidden text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground sm:block">
+            Software Engineer
+          </span>
+        </span>
+      </Link>
+
       {items?.length ? (
-        <nav className="hidden gap-6 md:flex items-center">
-          {items?.map((item, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              variants={navItemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+        <nav className="hidden items-center gap-1 lg:flex">
+          {items.map((item) => {
+            const itemPath = item.href.split("#")[0] || "/";
+            const isActive =
+              itemPath === "/"
+                ? pathname === "/"
+                : pathname.startsWith(itemPath);
+
+            return (
               <Link
+                key={item.href}
                 href={item.disabled ? "#" : item.href}
                 className={cn(
-                  "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
-                  item.href.startsWith(`/${segment}`)
-                    ? "text-foreground"
-                    : "text-foreground/60",
-                  item.disabled && "cursor-not-allowed opacity-80"
+                  "relative px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground",
+                  isActive && "text-foreground",
+                  item.disabled && "cursor-not-allowed opacity-50"
                 )}
               >
                 {item.title}
+                {isActive ? (
+                  <span className="absolute inset-x-3 -bottom-[13px] h-0.5 bg-[hsl(var(--signal))]" />
+                ) : null}
               </Link>
-            </motion.div>
-          ))}
+            );
+          })}
         </nav>
       ) : null}
-      <motion.button
-        className="flex items-center space-x-2 md:hidden"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+
+      <button
+        type="button"
+        className="ml-auto flex h-10 w-10 items-center justify-center border border-border text-foreground transition-colors hover:bg-accent lg:hidden"
+        onClick={() => setShowMobileMenu((current) => !current)}
+        aria-label={showMobileMenu ? "Close navigation" : "Open navigation"}
+        aria-expanded={showMobileMenu}
       >
         {showMobileMenu ? <Icons.close /> : <Icons.menu />}
-        <span className="font-bold">Menu</span>
-      </motion.button>
-      {showMobileMenu && items && (
+      </button>
+
+      {showMobileMenu && items ? (
         <MobileNav items={items}>{children}</MobileNav>
-      )}
+      ) : null}
     </div>
   );
 }

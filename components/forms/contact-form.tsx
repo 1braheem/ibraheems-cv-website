@@ -82,7 +82,7 @@ export function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 min-w-full"
+        className="min-w-full space-y-6"
       >
         <input
           type="text"
@@ -101,9 +101,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Enter your name" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -134,8 +131,16 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={form.formState.isSubmitting}>
+        <Button
+          type="submit"
+          size="lg"
+          className="w-full sm:w-auto"
+          disabled={form.formState.isSubmitting}
+        >
           {form.formState.isSubmitting ? "Sending..." : "Submit"}
+          {!form.formState.isSubmitting ? (
+            <Icons.chevronRight className="ml-2 h-4 w-4" />
+          ) : null}
         </Button>
       </form>
     </Form>

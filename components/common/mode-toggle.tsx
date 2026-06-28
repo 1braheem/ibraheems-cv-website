@@ -8,51 +8,34 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme } = useTheme();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="h-8 w-8 px-0">
-          <Icons.sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 retro:scale-0 paper:scale-0 aurora:scale-0" />
-          <Icons.moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 retro:scale-0 paper:scale-0 aurora:scale-0" />
-          <Icons.retro className="absolute rotate-90 scale-0 transition-all retro:rotate-0 retro:scale-100" />
-          <Icons.paper className="absolute rotate-90 scale-0 transition-all paper:rotate-0 paper:scale-100" />
-          <Icons.aurora className="absolute rotate-90 scale-0 transition-all aurora:rotate-0 aurora:scale-100" />
-          <span className="sr-only">Toggle theme</span>
+        <Button
+          variant="outline"
+          size="icon"
+          className="h-9 w-9 rounded-none"
+          aria-label="Change color theme"
+        >
+          <Icons.sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Icons.moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          <Icons.sun className="mr-2 h-4 w-4" />
-          <span>Light</span>
+          <Icons.sun className="mr-2 h-4 w-4" /> Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <Icons.moon className="mr-2 h-4 w-4" />
-          <span>Dark</span>
+          <Icons.moon className="mr-2 h-4 w-4" /> Dark
         </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => setTheme("retro")}>
-          <Icons.retro className="mr-2 h-4 w-4" />
-          <span>Retro</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("paper")}>
-          <Icons.paper className="mr-2 h-4 w-4" />
-          <span>Paper</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("aurora")}>
-          <Icons.aurora className="mr-2 h-4 w-4" />
-          <span>Aurora</span>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Icons.laptop className="mr-2 h-4 w-4" />
-          <span>System</span>
+          <Icons.laptop className="mr-2 h-4 w-4" /> System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

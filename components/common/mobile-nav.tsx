@@ -1,9 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 
-import { siteConfig } from "@/config/site";
 import { useLockBody } from "@/hooks/use-lock-body";
-import { cn } from "@/lib/utils";
 
 interface MobileNavProps {
   items: any[];
@@ -14,31 +12,32 @@ export function MobileNav({ items, children }: MobileNavProps) {
   useLockBody();
 
   return (
-    <div
-      className={cn(
-        "fixed inset-0 top-12 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md animate-in slide-in-from-top-10 md:hidden"
-      )}
-    >
-      <div className="relative z-20 grid gap-6 rounded-md bg-popover p-4 text-popover-foreground shadow-md">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="font-heading text-2xl">{siteConfig.brandName}</span>
-        </Link>
-        <nav className="grid grid-flow-row auto-rows-max text-sm">
-          {items.map((item, index) => (
-            <Link
-              key={index}
-              href={item.disabled ? "#" : item.href}
-              className={cn(
-                "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
-                item.disabled && "cursor-not-allowed opacity-60"
-              )}
-            >
+    <div className="fixed inset-x-0 bottom-0 top-16 z-50 overflow-auto border-t border-border bg-background p-6 lg:hidden">
+      <nav className="mx-auto grid max-w-lg divide-y divide-border border-y border-border">
+        {items.map((item, index) => (
+          <Link
+            key={item.href}
+            href={item.disabled ? "#" : item.href}
+            className="group flex min-h-16 items-center justify-between py-4 text-lg font-semibold"
+          >
+            <span className="flex items-center gap-4">
+              <span className="text-xs font-bold text-[hsl(var(--signal))]">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               {item.title}
-            </Link>
-          ))}
-        </nav>
-        {children ? <div className="pt-2">{children}</div> : null}
-      </div>
+            </span>
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </Link>
+        ))}
+      </nav>
+      {children ? (
+        <div className="mx-auto mt-8 max-w-lg">{children}</div>
+      ) : null}
     </div>
   );
 }

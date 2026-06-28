@@ -29,35 +29,40 @@ export default function ProjectGallery({
   if (!activeScreen) return null;
 
   return (
-    <section className="mb-7" aria-labelledby="project-screens-heading">
+    <section
+      className="mt-16 border-t border-border pt-10"
+      aria-labelledby="project-screens-heading"
+    >
       <h2
         id="project-screens-heading"
-        className="mb-5 font-heading text-3xl leading-tight"
+        className="font-heading text-3xl leading-tight sm:text-4xl"
       >
         Project Screens
       </h2>
 
-      <div aria-live="polite">
-        <h3 className="font-heading text-xl leading-tight">
-          {activeScreen.title}
-        </h3>
-        {activeScreen.description && (
-          <p className="mt-1 text-muted-foreground">
-            {activeScreen.description}
-          </p>
-        )}
+      <div className="mt-8" aria-live="polite">
         <ProjectMedia
           src={activeScreen.src}
           alt={`${projectName} - ${activeScreen.title}`}
           variant={activeScreen.variant ?? "cover"}
-          className="my-4 aspect-video w-full"
+          className="aspect-video w-full"
           priority
         />
+        <div className="grid gap-2 border-x border-b border-border p-5 sm:grid-cols-[0.65fr_1.35fr]">
+          <h3 className="font-heading text-xl leading-tight">
+            {activeScreen.title}
+          </h3>
+          {activeScreen.description ? (
+            <p className="text-sm leading-6 text-muted-foreground">
+              {activeScreen.description}
+            </p>
+          ) : null}
+        </div>
       </div>
 
       {screens.length > 1 && (
         <div
-          className="grid grid-cols-2 gap-3 sm:grid-cols-3"
+          className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3"
           aria-label="Choose a project screen"
         >
           {screens.map((screen, index) => (
@@ -67,24 +72,19 @@ export default function ProjectGallery({
               aria-pressed={activeIndex === index}
               onClick={() => setActiveIndex(index)}
               className={cn(
-                "group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                "group border-t-2 pt-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 activeIndex === index
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "border-[hsl(var(--signal))] text-foreground"
+                  : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
               )}
             >
               <ProjectMedia
                 src={screen.src}
                 alt=""
                 variant={screen.variant ?? "cover"}
-                className={cn(
-                  "aspect-video w-full transition-colors",
-                  activeIndex === index
-                    ? "border-primary"
-                    : "border-border/70 group-hover:border-primary/50"
-                )}
+                className={cn("aspect-video w-full transition-colors")}
               />
-              <span className="mt-2 block text-sm font-semibold leading-tight">
+              <span className="mt-2 block text-xs font-semibold leading-tight">
                 {screen.title}
               </span>
             </button>

@@ -11,51 +11,27 @@ export default function ContributionCard({
   contributions,
 }: ContributionCardProps) {
   return (
-    <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
-      {contributions.map((contribution, id) => (
+    <div className="divide-y divide-border border-y border-border">
+      {contributions.map((contribution, index) => (
         <Link
           href={contribution.link}
           target="_blank"
-          key={id}
-          className="w-full min-w-0 h-full"
+          key={contribution.repo}
+          className="group grid gap-4 py-6 sm:grid-cols-[3rem_0.8fr_1.4fr_auto] sm:items-start"
         >
-          <div className="relative rounded-lg border bg-background p-2 hover:bg-accent hover:text-accent-foreground transition-colors w-full h-full flex flex-col">
-            <Icons.externalLink
-              size={35}
-              className="absolute bottom-3 right-3 border bg-background rounded-full p-1.5 sm:p-2 cursor-pointer text-muted-foreground z-10 w-8 h-8 sm:w-10 sm:h-10"
-            />
-            <div className="flex min-h-[170px] flex-col justify-between rounded-md p-4 sm:p-6 pb-12 sm:pb-6 flex-grow">
-              <div className="flex flex-row justify-between items-start gap-2 mb-4 min-w-0">
-                <h3 className="font-bold flex space-x-2 items-center min-w-0 flex-1">
-                  <Icons.gitRepoIcon
-                    size={18}
-                    className="flex-shrink-0 sm:w-5 sm:h-5"
-                  />
-                  <span className="truncate text-sm sm:text-base min-w-0">
-                    {contribution.repo}
-                  </span>
-                </h3>
-                <Icons.gitBranch
-                  size={18}
-                  className="flex-shrink-0 sm:w-5 sm:h-5"
-                />
-              </div>
-              <div className="space-y-3 sm:space-y-4 min-w-0">
-                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-3 break-words">
-                  {contribution.contibutionDescription}
-                </p>
-                <p className="text-xs sm:text-sm text-muted-foreground flex space-x-2 items-center min-w-0">
-                  <Icons.gitOrgBuilding
-                    size={14}
-                    className="flex-shrink-0 sm:w-4 sm:h-4"
-                  />
-                  <span className="truncate min-w-0">
-                    {contribution.repoOwner}
-                  </span>
-                </p>
-              </div>
-            </div>
+          <span className="text-xs font-bold text-[hsl(var(--signal))]">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <div>
+            <h3 className="font-heading text-lg">{contribution.repo}</h3>
+            <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+              {contribution.repoOwner}
+            </p>
           </div>
+          <p className="text-sm leading-6 text-muted-foreground">
+            {contribution.contibutionDescription}
+          </p>
+          <Icons.externalLink className="h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
         </Link>
       ))}
     </div>

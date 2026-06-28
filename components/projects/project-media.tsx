@@ -24,14 +24,14 @@ export default function ProjectMedia({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-lg border border-border",
+        "relative overflow-hidden border border-border",
         isLogo
-          ? "bg-[radial-gradient(circle_at_center,_#ffffff_0%,_#eef7ff_52%,_#d9f99d_140%)]"
+          ? "bg-white"
           : isFit
             ? "bg-black"
-          : isPortrait
-            ? "bg-muted"
-          : "bg-muted",
+            : isPortrait
+              ? "bg-muted"
+              : "bg-muted",
         className
       )}
     >
@@ -43,13 +43,13 @@ export default function ProjectMedia({
         className={cn(
           "transition-transform duration-300",
           isLogo
-            ? "object-contain p-8 drop-shadow-sm"
+            ? "object-contain p-8"
             : isFit
               ? "object-contain"
-            : cn(
-                "object-cover hover:scale-[1.02]",
-                isPortrait && "object-[center_28%]"
-              )
+              : cn(
+                  "object-cover hover:scale-[1.02]",
+                  isPortrait && "object-[center_28%]"
+                )
         )}
         priority={priority}
       />

@@ -1,60 +1,67 @@
-"use client";
-
-import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Icons } from "@/components/common/icons";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { ExternalLink, Heart, Linkedin } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+
+const gmailCompose =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=ibraheemaziz3568@gmail.com";
 
 export default function GithubRedirectCard() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <Card
-      className="w-full h-fit max-w-sm overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-102 mt-5"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <CardContent className="p-8 flex flex-col items-center text-center">
-        <div className="mb-6">
-          <Heart
-            className={`w-12 h-12 transition-colors duration-300 ease-out ${
-              isHovered ? "text-red-500" : "text-muted-foreground"
-            }`}
-          />
-        </div>
-        <h2 className="font-heading text-xl tracking-tight lg:text-3xl duration-300">
-          Ibraheem Aziz on LinkedIn
-        </h2>
-        <p className="mt-2 mb-10 font-heading text-lg text-muted-foreground">
-          {siteConfig.email}
-          <br />
-          {siteConfig.phone}
-          <br />
-          {siteConfig.location}
-        </p>
-        <Linkedin className="w-10 h-10 text-muted-foreground mb-5" />
-      </CardContent>
-      <CardFooter className="px-8 pb-8 pt-0">
+    <aside className="border-t-4 border-[hsl(var(--signal))] bg-secondary/50 p-6 sm:p-8">
+      <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+        Direct contact
+      </p>
+      <h2 className="mt-5 font-heading text-3xl">Prefer your own inbox?</h2>
+      <p className="mt-4 text-sm leading-6 text-muted-foreground">
+        Reach me directly for software engineering opportunities, project work,
+        or technical collaboration.
+      </p>
+
+      <div className="mt-8 divide-y divide-border border-y border-border">
+        <Link
+          href={gmailCompose}
+          target="_blank"
+          className="group flex items-center justify-between gap-4 py-5"
+        >
+          <span>
+            <span className="block text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+              Email
+            </span>
+            <span className="mt-1 block break-all font-semibold">
+              {siteConfig.email}
+            </span>
+          </span>
+          <Icons.externalLink className="h-5 w-5 flex-none transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+        </Link>
         <Link
           href={siteConfig.links.linkedin}
           target="_blank"
-          className={cn(
-            buttonVariants({ variant: "outline" }),
-            "w-full bg-transparent border-2 transition-all duration-300 py-6"
-          )}
+          className="group flex items-center justify-between gap-4 py-5"
         >
-          <span className="mr-2">View LinkedIn</span>
-          <ExternalLink className="w-5 h-5" />
+          <span>
+            <span className="block text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+              LinkedIn
+            </span>
+            <span className="mt-1 block font-semibold">ibraheem-aziz</span>
+          </span>
+          <Icons.externalLink className="h-5 w-5 flex-none transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
         </Link>
-      </CardFooter>
-      <div
-        className={`h-1 bg-gradient-to-r from-red-500 to-red-500 transition-all duration-300 ease-out ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}
-      ></div>
-    </Card>
+      </div>
+
+      <dl className="mt-8 grid gap-5 text-sm sm:grid-cols-2">
+        <div>
+          <dt className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+            Location
+          </dt>
+          <dd className="mt-1 font-semibold">{siteConfig.location}</dd>
+        </div>
+        <div>
+          <dt className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+            Phone
+          </dt>
+          <dd className="mt-1 font-semibold">{siteConfig.phone}</dd>
+        </div>
+      </dl>
+    </aside>
   );
 }

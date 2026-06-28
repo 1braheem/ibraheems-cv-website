@@ -11,21 +11,21 @@ interface MarketingLayoutProps {
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="container z-50 bg-background">
-        <div className="flex h-20 items-center justify-between py-6">
+      <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur-xl">
+        <div className="container flex h-16 items-center justify-between">
           <MainNav items={routesConfig.mainNav}>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 border-t border-border pt-5">
               <GitHubStarBadge className="w-full justify-center" />
               <ModeToggle />
             </div>
           </MainNav>
-          <nav className="flex items-center gap-5">
+          <nav className="hidden items-center gap-2 md:flex">
             <GitHubStarBadge />
             <ModeToggle />
           </nav>
         </div>
       </header>
-      <main className="container flex-1">{children}</main>
+      <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>
   );

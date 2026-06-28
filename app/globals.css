@@ -4,175 +4,72 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 0 0% 98%;
+    --foreground: 220 14% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 14% 93%;
+    --muted-foreground: 220 8% 43%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 220 12% 82%;
+    --input: 220 12% 82%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card-foreground: 220 14% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 220 14% 11%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 14% 94%;
+    --secondary-foreground: 220 14% 11%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 14% 92%;
+    --accent-foreground: 220 14% 11%;
 
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 215 20.2% 65.1%;
+    --ring: 214 88% 52%;
+    --signal: 214 88% 47%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     --d: 700ms;
     --e: cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    --background: 220 10% 7%;
+    --foreground: 0 0% 94%;
 
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
+    --muted: 220 8% 14%;
+    --muted-foreground: 220 7% 64%;
 
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 220 8% 17%;
+    --accent-foreground: 0 0% 96%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
+    --popover: 220 10% 8%;
+    --popover-foreground: 0 0% 94%;
 
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
+    --border: 220 8% 24%;
+    --input: 220 8% 24%;
 
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
+    --card: 220 10% 9%;
+    --card-foreground: 0 0% 94%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    --primary: 0 0% 94%;
+    --primary-foreground: 220 10% 7%;
 
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 8% 13%;
+    --secondary-foreground: 0 0% 94%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 216 34% 17%;
-
-    --radius: 0.5rem;
-    --d: 700ms;
-    --e: cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-  .retro {
-    --background: 39 70% 90%;
-    --foreground: 20 80% 20%;
-
-    --muted: 30 40% 85%;
-    --muted-foreground: 20 40% 30%;
-
-    --popover: 39 70% 90%;
-    --popover-foreground: 20 80% 20%;
-
-    --border: 20 40% 70%;
-    --input: 20 40% 70%;
-
-    --card: 39 60% 85%;
-    --card-foreground: 20 80% 20%;
-
-    --primary: 20 80% 50%;
-    --primary-foreground: 39 100% 97%;
-
-    --secondary: 30 60% 80%;
-    --secondary-foreground: 20 80% 20%;
-
-    --accent: 20 80% 50%;
-    --accent-foreground: 39 100% 97%;
-
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 39 100% 97%;
-
-    --ring: 20 40% 70%;
-
-    --radius: 0.125rem;
-    --d: 700ms;
-    --e: cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-  .aurora {
-    --background: 220 40% 10%;
-    --foreground: 160 100% 90%;
-
-    --muted: 220 30% 20%;
-    --muted-foreground: 160 70% 70%;
-
-    --popover: 220 40% 10%;
-    --popover-foreground: 160 100% 90%;
-
-    --border: 280 80% 60%;
-    --input: 280 80% 60%;
-
-    --card: 220 35% 15%;
-    --card-foreground: 160 100% 90%;
-
-    --primary: 160 100% 50%;
-    --primary-foreground: 220 40% 10%;
-
-    --secondary: 280 80% 60%;
-    --secondary-foreground: 220 40% 10%;
-
-    --accent: 320 80% 60%;
-    --accent-foreground: 220 40% 10%;
-
-    --destructive: 0 90% 60%;
-    --destructive-foreground: 220 40% 10%;
-
-    --ring: 280 80% 60%;
-
-    --radius: 1rem;
-    --d: 700ms;
-    --e: cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-  .paper {
-    --background: 40 30% 95%;
-    --foreground: 25 50% 20%;
-
-    --muted: 30 20% 90%;
-    --muted-foreground: 25 30% 40%;
-
-    --popover: 40 30% 95%;
-    --popover-foreground: 25 50% 20%;
-
-    --border: 25 30% 80%;
-    --input: 25 30% 80%;
-
-    --card: 35 25% 92%;
-    --card-foreground: 25 50% 20%;
-
-    --primary: 25 95% 40%;
-    --primary-foreground: 40 30% 98%;
-
-    --secondary: 15 60% 85%;
-    --secondary-foreground: 25 50% 20%;
-
-    --accent: 15 60% 85%;
-    --accent-foreground: 25 50% 20%;
-
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 40 30% 98%;
-
-    --ring: 25 30% 80%;
+    --ring: 214 90% 58%;
+    --signal: 214 90% 58%;
 
     --radius: 0.25rem;
     --d: 700ms;
@@ -193,12 +90,54 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings:
-      "rlig"1,
-      "calt"1;
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {
     background: hsl(var(--primary) / 0.22);
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply container py-16 md:py-24;
+  }
+
+  .section-grid {
+    @apply grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16;
+  }
+
+  .section-label {
+    @apply flex items-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground;
+  }
+
+  .section-label span {
+    color: hsl(var(--signal));
+  }
+
+  .section-title {
+    @apply mt-5 max-w-3xl font-heading text-4xl leading-[1.04] sm:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-5 max-w-xl text-base leading-7 text-muted-foreground;
+  }
+
+  .text-link {
+    @apply inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm font-bold transition-colors;
+  }
+
+  .text-link:hover {
+    color: hsl(var(--signal));
+    border-color: hsl(var(--signal));
   }
 }
 
@@ -266,23 +205,25 @@
   width: 105%;
   height: 200%;
   pointer-events: none;
-  background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.009) 11.7%,
-      rgba(0, 0, 0, 0.034) 22.1%,
-      rgba(0, 0, 0, 0.072) 31.2%,
-      rgba(0, 0, 0, 0.123) 39.4%,
-      rgba(0, 0, 0, 0.182) 46.6%,
-      rgba(0, 0, 0, 0.249) 53.1%,
-      rgba(0, 0, 0, 0.32) 58.9%,
-      rgba(0, 0, 0, 0.394) 64.3%,
-      rgba(0, 0, 0, 0.468) 69.3%,
-      rgba(0, 0, 0, 0.54) 74.1%,
-      rgba(0, 0, 0, 0.607) 78.8%,
-      rgba(0, 0, 0, 0.668) 83.6%,
-      rgba(0, 0, 0, 0.721) 88.7%,
-      rgba(0, 0, 0, 0.762) 94.1%,
-      rgba(0, 0, 0, 0.79) 100%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.009) 11.7%,
+    rgba(0, 0, 0, 0.034) 22.1%,
+    rgba(0, 0, 0, 0.072) 31.2%,
+    rgba(0, 0, 0, 0.123) 39.4%,
+    rgba(0, 0, 0, 0.182) 46.6%,
+    rgba(0, 0, 0, 0.249) 53.1%,
+    rgba(0, 0, 0, 0.32) 58.9%,
+    rgba(0, 0, 0, 0.394) 64.3%,
+    rgba(0, 0, 0, 0.468) 69.3%,
+    rgba(0, 0, 0, 0.54) 74.1%,
+    rgba(0, 0, 0, 0.607) 78.8%,
+    rgba(0, 0, 0, 0.668) 83.6%,
+    rgba(0, 0, 0, 0.721) 88.7%,
+    rgba(0, 0, 0, 0.762) 94.1%,
+    rgba(0, 0, 0, 0.79) 100%
+  );
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
@@ -298,7 +239,7 @@
   z-index: 1;
 }
 
-.content>*+* {
+.content > * + * {
   margin-top: 1rem;
 }
 
@@ -346,7 +287,7 @@
     transform: translateY(calc(100% - 4.5rem));
   }
 
-  .content>*:not(.title) {
+  .content > *:not(.title) {
     opacity: 0;
     transform: translateY(1rem);
     transition:
@@ -374,8 +315,8 @@
     transform: translateY(0);
   }
 
-  .card:hover .content>*:not(.title),
-  .card:focus-within .content>*:not(.title) {
+  .card:hover .content > *:not(.title),
+  .card:focus-within .content > *:not(.title) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
@@ -384,7 +325,7 @@
   .card:focus-within:before,
   .card:focus-within:after,
   .card:focus-within .content,
-  .card:focus-within .content>*:not(.title) {
+  .card:focus-within .content > *:not(.title) {
     transition-duration: 0s;
   }
 }
@@ -424,7 +365,6 @@
 }
 
 @keyframes draw {
-
   0%,
   100% {
     stroke-opacity: 1;
@@ -459,14 +399,20 @@
   scroll-margin-top: 5rem;
 }
 
-.blog-content h1 { font-size: 2rem; }
+.blog-content h1 {
+  font-size: 2rem;
+}
 .blog-content h2 {
   font-size: 1.5rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid hsl(var(--border));
 }
-.blog-content h3 { font-size: 1.25rem; }
-.blog-content h4 { font-size: 1.1rem; }
+.blog-content h3 {
+  font-size: 1.25rem;
+}
+.blog-content h4 {
+  font-size: 1.1rem;
+}
 
 .blog-content p {
   margin-bottom: 1.25rem;
@@ -541,7 +487,8 @@
   padding: 0.15em 0.4em;
   border-radius: calc(var(--radius) - 4px);
   font-size: 0.875em;
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  font-family:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
 }
 
 /* Code blocks */

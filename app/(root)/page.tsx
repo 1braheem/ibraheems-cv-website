@@ -4,19 +4,15 @@ import Link from "next/link";
 import Script from "next/script";
 
 import { AnimatedSection } from "@/components/common/animated-section";
-import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
-import ContributionCard from "@/components/contributions/contribution-card";
 import ExperienceCard from "@/components/experience/experience-card";
 import ProjectCard from "@/components/projects/project-card";
-import SkillsCard from "@/components/skills/skills-card";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { certifications } from "@/config/certifications";
 import { featuredContributions } from "@/config/contributions";
 import { education } from "@/config/education";
 import { experiences } from "@/config/experience";
-import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
 import { services } from "@/config/services";
 import { siteConfig } from "@/config/site";
@@ -24,14 +20,23 @@ import { featuredSkills } from "@/config/skills";
 import profileImg from "@/public/ibraheem-profile.jpg";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: siteConfig.name,
-  },
+  title: { absolute: siteConfig.name },
   description: siteConfig.description,
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  alternates: { canonical: siteConfig.url },
 };
+
+const SectionLabel = ({
+  number,
+  children,
+}: {
+  number: string;
+  children: React.ReactNode;
+}) => (
+  <p className="section-label">
+    <span>{number}</span>
+    {children}
+  </p>
+);
 
 export default function IndexPage() {
   const personSchema = {
@@ -74,348 +79,283 @@ export default function IndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <section className="space-y-6 pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 min-h-[calc(100vh-5rem)] flex items-center">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
-          <Image
-            src={profileImg}
-            alt="Ibraheem Aziz"
-            width={220}
-            height={220}
-            className="mb-2 aspect-square w-[58%] max-w-[14rem] rounded-full border-8 border-primary bg-primary object-cover object-[center_25%] shadow-lg"
-            priority
-          />
-          <AnimatedText
-            as="h1"
-            delay={0.15}
-            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            Ibraheem Aziz
-          </AnimatedText>
-          <AnimatedText
-            as="h3"
-            delay={0.25}
-            className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
-          >
-            Computer Science Student · Backend & Cybersecurity Intern
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.35}
-            className="mt-4 max-w-[46rem] leading-normal text-muted-foreground text-sm sm:text-base"
-          >
-            Computer Science student at FAST NUCES with hands-on experience in
-            full-stack and mobile development, Android applications, C++
-            systems, backend programming, and cybersecurity-focused research
-            work.
-          </AnimatedText>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:space-x-4">
-            <AnimatedText delay={0.45}>
+      <section className="relative h-[82svh] min-h-[460px] max-h-[780px] overflow-hidden bg-black text-white">
+        <Image
+          src={profileImg}
+          alt="Ibraheem Aziz"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_28%] md:object-[center_32%]"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="container relative flex h-full flex-col justify-between py-8 md:py-12">
+          <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-white/80">
+            <span className="h-2 w-2 bg-emerald-400" />
+            Computer Science · FAST NUCES
+          </div>
+
+          <div className="max-w-4xl pb-2">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-white/70">
+              Backend · Systems · Mobile
+            </p>
+            <h1 className="max-w-3xl font-heading text-5xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-8xl">
+              Ibraheem Aziz
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
+              Computer Science student and software engineering intern building
+              practical backend, desktop, mobile, and systems software.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href={"/projects"}
-                className={buttonVariants({ size: "lg" })}
-                aria-label="View projects"
+                href="/projects"
+                className={buttonVariants({
+                  size: "lg",
+                  className:
+                    "rounded-none bg-white text-black hover:bg-white/90 hover:text-black",
+                })}
               >
-                <Icons.laptop className="mr-2 h-4 w-4" /> Projects
+                View selected work
+                <Icons.chevronRight className="ml-2 h-4 w-4" />
               </Link>
-            </AnimatedText>
-            <AnimatedText delay={0.55}>
               <Link
-                href={"/resume"}
+                href="/resume"
                 target="_blank"
-                className={buttonVariants({ variant: "outline", size: "lg" })}
-                aria-label="View resume"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  className:
+                    "rounded-none border-white/60 bg-transparent text-white hover:bg-white hover:text-black",
+                })}
               >
-                <Icons.post className="mr-2 h-4 w-4" /> Resume
+                <Icons.post className="mr-2 h-4 w-4" />
+                Resume
               </Link>
-            </AnimatedText>
-            <AnimatedText delay={0.65}>
-              <Link
-                href={"/contact"}
-                className={buttonVariants({ variant: "outline", size: "lg" })}
-                aria-label="Contact Ibraheem Aziz"
-              >
-                <Icons.contact className="mr-2 h-4 w-4" /> Contact
-              </Link>
-            </AnimatedText>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 border-t border-white/30 pt-4 text-xs uppercase tracking-[0.14em] text-white/70 sm:grid-cols-3 sm:gap-8">
+            <span>Rawalpindi, Pakistan</span>
+            <span className="hidden sm:block">
+              Open to engineering opportunities
+            </span>
+            <Link
+              href="/contact"
+              className="hidden text-right text-white transition-colors hover:text-emerald-300 sm:block"
+            >
+              Start a conversation →
+            </Link>
           </div>
         </div>
       </section>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-8 py-16"
-        id="services"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center section-heading">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl"
-          >
-            Services
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            Mobile, web, backend, desktop, and systems programming work built
-            around practical software engineering fundamentals.
-          </AnimatedText>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
-          {services.map((service, index) => (
-            <AnimatedSection
-              key={service.title}
-              delay={0.1 * (index + 1)}
-              direction="up"
-              className="h-full"
-            >
-              <div className="relative rounded-lg border bg-background p-2 h-full">
-                <div className="flex min-h-[210px] flex-col justify-between rounded-md p-6">
-                  <Icons.sparkles size={42} />
-                  <div className="space-y-2">
-                    <h3 className="font-bold">{service.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-8 rounded-2xl border border-border/70 bg-muted/45 py-16"
-        id="projects"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center section-heading">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl"
-          >
-            {pagesConfig.projects.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            {pagesConfig.projects.description}
-          </AnimatedText>
-        </div>
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
-            {featuredProjects.map((exp, index) => (
-              <AnimatedSection
-                key={exp.id}
-                delay={0.1 * (index + 1)}
-                direction="up"
-                className="h-full w-full min-w-0"
+
+      <AnimatedSection direction="up" className="section-shell" id="services">
+        <div className="section-grid">
+          <div>
+            <SectionLabel number="01">Capabilities</SectionLabel>
+            <h2 className="section-title">Built across the stack.</h2>
+            <p className="section-copy">
+              Practical software work grounded in computer science fundamentals,
+              maintainable implementation, and dependable user flows.
+            </p>
+          </div>
+          <div className="divide-y divide-border border-y border-border">
+            {services.map((service, index) => (
+              <div
+                key={service.title}
+                className="grid gap-3 py-5 sm:grid-cols-[3rem_1fr_1.5fr] sm:items-start"
               >
-                <ProjectCard project={exp} />
-              </AnimatedSection>
+                <span className="text-xs font-bold text-[hsl(var(--signal))]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-heading text-lg">{service.title}</h3>
+                <p className="text-sm leading-6 text-muted-foreground">
+                  {service.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/projects">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
       </AnimatedSection>
+
       <AnimatedSection
         direction="up"
-        className="container space-y-8 py-16"
-        id="experience"
+        className="border-y border-border bg-secondary/35"
+        id="projects"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center section-heading">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl"
-          >
-            {pagesConfig.experience.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            {pagesConfig.experience.description}
-          </AnimatedText>
+        <div className="section-shell">
+          <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <SectionLabel number="02">Selected work</SectionLabel>
+              <h2 className="section-title max-w-2xl">
+                Systems with real interfaces and real constraints.
+              </h2>
+            </div>
+            <Link href="/projects" className="text-link w-fit">
+              Explore every project <Icons.chevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid items-stretch gap-5 lg:grid-cols-3">
+            {featuredProjects.map((project) => (
+              <ProjectCard project={project} key={project.id} />
+            ))}
+          </div>
         </div>
-        <div className="mx-auto grid justify-center gap-4 md:w-full lg:grid-cols-3">
-          {experiences.slice(0, 3).map((experience, index) => (
-            <AnimatedSection
-              key={experience.id}
-              delay={0.1 * (index + 1)}
-              direction="up"
-            >
-              <ExperienceCard experience={experience} />
-            </AnimatedSection>
-          ))}
-        </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/experience">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
       </AnimatedSection>
+
+      <AnimatedSection direction="up" className="section-shell" id="experience">
+        <div className="section-grid">
+          <div>
+            <SectionLabel number="03">Experience</SectionLabel>
+            <h2 className="section-title">Learning by shipping.</h2>
+            <p className="section-copy">
+              Software development, backend engineering, and cybersecurity work
+              across research and community environments.
+            </p>
+            <Link href="/experience" className="text-link mt-7 w-fit">
+              Full timeline <Icons.chevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="space-y-4">
+            {experiences.slice(0, 3).map((experience) => (
+              <ExperienceCard experience={experience} key={experience.id} />
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
       <AnimatedSection
         direction="up"
-        className="container space-y-8 rounded-2xl border border-border/70 bg-muted/45 py-16"
-        id="contributions"
+        className="border-y border-border bg-foreground text-background"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center section-heading">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl"
-          >
-            {pagesConfig.contributions.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            {pagesConfig.contributions.description}
-          </AnimatedText>
-        </div>
-        <ContributionCard contributions={featuredContributions} />
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/contributions">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-8 rounded-2xl border border-border/70 bg-muted/45 py-16"
-        id="skills"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center section-heading">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl"
-          >
-            {pagesConfig.skills.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            {pagesConfig.skills.description}
-          </AnimatedText>
-        </div>
-        <SkillsCard skills={featuredSkills} />
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/skills">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-8 py-16"
-        id="education"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center section-heading">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl"
-          >
-            Education
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            Computer Science foundation with practical coursework in data
-            structures, OOP, operating systems, databases, and networks.
-          </AnimatedText>
-        </div>
-        <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2">
-          {education.map((item, index) => (
-            <AnimatedSection
-              key={item.degree}
-              delay={0.1 * (index + 1)}
-              direction="up"
-              className="h-full"
-            >
-              <div className="relative h-full rounded-lg border bg-background/80 p-2 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl">
-                <div className="flex min-h-[190px] flex-col justify-between rounded-md p-6">
-                  <Icons.post className="text-primary" size={42} />
-                  <div className="space-y-2">
-                    <h3 className="font-bold">{item.degree}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {item.institution}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {item.duration}
-                    </p>
-                    {item.details && (
-                      <p className="text-sm text-muted-foreground">
-                        {item.details}
-                      </p>
-                    )}
-                  </div>
+        <div className="section-shell">
+          <SectionLabel number="04">Technical range</SectionLabel>
+          <div className="mt-8 grid gap-px bg-background/25 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className="flex min-h-40 flex-col justify-between bg-foreground p-6"
+              >
+                <skill.icon size={28} />
+                <div>
+                  <h3 className="font-heading text-xl">{skill.name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-background/65">
+                    {skill.description}
+                  </p>
                 </div>
               </div>
-            </AnimatedSection>
-          ))}
+            ))}
+          </div>
+          <Link
+            href="/skills"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-bold"
+          >
+            View complete skill set <Icons.chevronRight className="h-4 w-4" />
+          </Link>
         </div>
       </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-8 rounded-2xl border border-border/70 bg-muted/45 py-16"
-        id="certifications"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center section-heading">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl"
-          >
-            Certifications
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            Verified experience, community work, and core CS preparation that
-            support practical engineering delivery.
-          </AnimatedText>
+
+      <AnimatedSection direction="up" className="section-shell">
+        <div className="mb-10">
+          <SectionLabel number="05">Foundation</SectionLabel>
+          <h2 className="section-title">Education and proof of work.</h2>
         </div>
-        <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {certifications.map((certification, index) => (
-            <AnimatedSection
-              key={certification.title}
-              delay={0.1 * (index + 1)}
-              direction="up"
-              className="h-full"
-            >
-              <div className="relative h-full rounded-lg border bg-background/80 p-2 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl">
-                <div className="flex min-h-[150px] flex-col justify-between rounded-md p-6">
-                  <Icons.star className="text-primary" size={34} />
-                  <h3 className="font-bold text-sm">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div className="divide-y divide-border border-y border-border">
+            {education.map((item) => (
+              <div key={item.degree} className="py-6">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[hsl(var(--signal))]">
+                  {item.duration}
+                </p>
+                <h3 className="mt-2 font-heading text-xl">{item.degree}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {item.institution}
+                </p>
+                {item.details ? (
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {item.details}
+                  </p>
+                ) : null}
+              </div>
+            ))}
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+              Certifications
+            </p>
+            <div className="grid grid-cols-1 border-t border-border sm:grid-cols-2">
+              {certifications.map((certification, index) => (
+                <div
+                  key={certification.title}
+                  className="flex min-h-28 items-start gap-3 border-b border-border py-5 sm:odd:pr-5 sm:even:border-l sm:even:pl-5"
+                >
+                  <span className="text-xs font-bold text-[hsl(var(--signal))]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-sm font-semibold leading-6">
                     {certification.title}
                   </h3>
                 </div>
-              </div>
-            </AnimatedSection>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
       </AnimatedSection>
+
+      <AnimatedSection direction="up" className="border-t border-border">
+        <div className="section-shell grid gap-8 lg:grid-cols-[1fr_2fr]">
+          <div>
+            <SectionLabel number="06">Contribution</SectionLabel>
+            <h2 className="section-title">Beyond coursework.</h2>
+          </div>
+          <div className="divide-y divide-border border-y border-border">
+            {featuredContributions.map((contribution) => (
+              <Link
+                href={contribution.link}
+                target="_blank"
+                key={contribution.repo}
+                className="group flex items-start justify-between gap-6 py-6"
+              >
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[hsl(var(--signal))]">
+                    {contribution.repoOwner}
+                  </p>
+                  <h3 className="mt-2 font-heading text-xl">
+                    {contribution.repo}
+                  </h3>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+                    {contribution.contibutionDescription}
+                  </p>
+                </div>
+                <Icons.externalLink className="mt-1 h-5 w-5 flex-none transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      <section className="border-t border-border bg-[hsl(var(--signal))] text-white">
+        <div className="section-shell flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/75">
+              Have a project or opportunity?
+            </p>
+            <h2 className="mt-4 max-w-3xl font-heading text-4xl sm:text-5xl md:text-6xl">
+              Let’s build something dependable.
+            </h2>
+          </div>
+          <Link
+            href="/contact"
+            className={buttonVariants({
+              size: "lg",
+              className:
+                "w-fit rounded-none bg-white text-black hover:bg-black hover:text-white",
+            })}
+          >
+            Contact me <Icons.chevronRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </section>
     </ClientPageWrapper>
   );
 }

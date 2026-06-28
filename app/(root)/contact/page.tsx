@@ -16,11 +16,14 @@ export default function ContactPage() {
       title={pagesConfig.contact.title}
       description={pagesConfig.contact.description}
     >
-      <div className="flex flex-col lg:flex-row">
-        <div className="flex-1">
+      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+        <div>
+          <p className="mb-6 text-xs font-bold uppercase tracking-[0.14em] text-[hsl(var(--signal))]">
+            Send a message
+          </p>
           <ContactForm />
         </div>
-        <div className="flex-1 flex justify-end">
+        <div>
           <GithubRedirectCard />
         </div>
       </div>
