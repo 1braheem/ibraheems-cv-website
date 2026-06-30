@@ -9,7 +9,4 @@ export const certifications: CertificationInterface[] = [
   {
     title: "Community Computing Initiative - Volunteer Computing Instructor",
   },
-  {
-    title: "Core CS Coursework - Data Structures, OOP, OS, Databases, Networks",
-  },
 ];
