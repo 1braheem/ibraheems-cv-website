@@ -9,10 +9,10 @@ export const siteConfig = {
   email: "ibraheemaziz3568@gmail.com",
   secondaryEmail: "",
   phone: "+92 332 8540999",
-  website: "ibraheems-cv-website.vercel.app",
+  website: "ibraheemaziz.vercel.app",
   description:
     "Computer Science student focused on full-stack, mobile, backend, and cybersecurity systems.",
-  url: "https://ibraheems-cv-website.vercel.app",
+  url: "https://ibraheemaziz.vercel.app",
   links: {
     linkedin: "https://www.linkedin.com/in/ibraheem-aziz-693b19322/",
     github: "https://github.com/1braheem",
