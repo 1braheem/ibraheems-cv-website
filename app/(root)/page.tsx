@@ -152,7 +152,9 @@ export default function IndexPage() {
         <div className="section-grid">
           <div>
             <SectionLabel number="01">Capabilities</SectionLabel>
-            <h2 className="section-title">Built across the stack.</h2>
+            <h2 className="section-title">
+              Turning concepts into working software.
+            </h2>
             <p className="section-copy">
               Practical software work grounded in computer science fundamentals,
               maintainable implementation, and dependable user flows.
