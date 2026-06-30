@@ -51,6 +51,7 @@ export const Projects: ProjectInterface[] = [
     category: ["Android", "Mobile Dev", "Full Stack", "Database"],
     shortDescription:
       "Full-stack Android social media application replicating core Instagram features including feeds, posts, and user data management.",
+    githubLink: "https://github.com/1braheem/DBDT2/tree/socially",
     techStack: ["Kotlin", "Android Studio", "PHP", "MySQL"],
     startDate: new Date("2025-01-01"),
     endDate: new Date("2025-06-01"),
