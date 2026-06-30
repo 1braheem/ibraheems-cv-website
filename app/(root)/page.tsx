@@ -208,7 +208,9 @@ export default function IndexPage() {
         <div className="section-grid">
           <div>
             <SectionLabel number="03">Experience</SectionLabel>
-            <h2 className="section-title">Learning by shipping.</h2>
+            <h2 className="section-title">
+              Research experience and community service.
+            </h2>
             <p className="section-copy">
               Software development, backend engineering, and cybersecurity work
               across research and community environments.
