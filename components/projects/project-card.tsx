@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           href={`/projects/${project.id}`}
           className="mt-2 inline-flex min-h-11 items-center justify-between border-t border-border pt-4 text-sm font-bold"
         >
-          Read case study
+          Explore project
           <Icons.chevronRight className="h-4 w-4" />
         </Link>
       </div>
