@@ -51,6 +51,15 @@ export default async function Project({ params }: ProjectPageProps) {
           <ChipContainer textArr={project.category} />
         </div>
         <div className="flex gap-2">
+          {project.githubLink ? (
+            <Link
+              href={project.githubLink}
+              target="_blank"
+              className={cn(buttonVariants({ variant: "outline" }), "gap-2")}
+            >
+              <Icons.gitHub className="h-4 w-4" /> Source
+            </Link>
+          ) : null}
           {project.websiteLink ? (
             <Link
               href={project.websiteLink}
