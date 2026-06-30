@@ -30,7 +30,6 @@ export interface ProjectInterface {
 }
 
 const profileImage = "/ibraheem-profile.jpg";
-const chronoRiftImage = "/projects/chrono-rift/chrono-rift-terminal.png";
 const xonicImage = "/projects/xonic/xonix.webp";
 const gameBoyImage = "/projects/gameboy/gameboy-arcade.jpg";
 const centipedeImage = "/projects/centipede/centipede-gameplay.png";
@@ -238,38 +237,6 @@ export const Projects: ProjectInterface[] = [
         "Integrated the OpenAI API for complex query processing.",
         "Executed dynamic automated web navigation tasks.",
         "Combined speech input, language model output, and desktop automation.",
-      ],
-    },
-  },
-  {
-    id: "chrono-rift-os-sync-game",
-    companyName: "Chrono Rift - OS Sync Game",
-    type: "Personal",
-    category: ["C++", "Systems", "Game Dev"],
-    shortDescription:
-      "C++ multi-process game architecture using POSIX shared memory, semaphores, mutex locks, and Dockerized execution.",
-    githubLink: "https://github.com/1braheem/chrono-rift",
-    techStack: ["C++", "POSIX", "Docker", "Semaphores", "Mutex"],
-    startDate: new Date("2024-01-01"),
-    endDate: new Date("2024-06-01"),
-    companyLogoImg: chronoRiftImage,
-    imageVariant: "cover",
-    pagesInfoArr: [
-      {
-        title: "Multi-Process Game System",
-        description:
-          "Concurrent game processes coordinated through shared memory and synchronization primitives.",
-        imgArr: [],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "Engineered multi-process game architecture communicating concurrently via POSIX Shared Memory.",
-      ],
-      bullets: [
-        "Used semaphores and mutex locks for strict process synchronization.",
-        "Eliminated race conditions in concurrent gameplay logic.",
-        "Packaged and tested the system with Docker.",
       ],
     },
   },

@@ -41,10 +41,7 @@ export default async function Project({ params }: ProjectPageProps) {
 
       <header className="mt-8 grid gap-8 border-b border-border pb-10 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
-          <p className="section-label">
-            <span>{project.type}</span>
-            {formatDateFromObj(project.startDate)}
-          </p>
+          <p className="section-label">{formatDateFromObj(project.startDate)}</p>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-none sm:text-6xl lg:text-7xl">
             {project.companyName}
           </h1>

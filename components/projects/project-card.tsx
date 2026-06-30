@@ -21,15 +21,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         />
       </Link>
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[hsl(var(--signal))]">
-            {project.type} project
-          </span>
-          <Icons.chevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="font-heading text-2xl leading-tight">
+            {project.companyName}
+          </h3>
+          <Icons.chevronRight className="mt-1 h-4 w-4 flex-none transition-transform group-hover:translate-x-1" />
         </div>
-        <h3 className="mt-5 font-heading text-2xl leading-tight">
-          {project.companyName}
-        </h3>
         <p className="mt-3 line-clamp-3 flex-1 text-sm leading-6 text-muted-foreground">
           {project.shortDescription}
         </p>
