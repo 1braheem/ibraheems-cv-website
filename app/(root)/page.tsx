@@ -209,7 +209,7 @@ export default function IndexPage() {
           <div>
             <SectionLabel number="03">Experience</SectionLabel>
             <h2 className="section-title">
-              Research experience and community service.
+              Internship experience and community service.
             </h2>
             <p className="section-copy">
               Software development, backend engineering, and cybersecurity work
