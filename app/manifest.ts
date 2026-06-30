@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Ibraheem Aziz - Software Engineering Portfolio",
+    name: "Ibraheem Aziz - Computer Science Portfolio",
     short_name: "Ibraheem Aziz",
     description:
       "Computer Science student focused on full-stack, mobile, backend, and cybersecurity systems.",

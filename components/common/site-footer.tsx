@@ -17,7 +17,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             <div>
               <p className="font-heading">{siteConfig.brandName}</p>
               <p className="text-xs text-muted-foreground">
-                Software Engineering Portfolio
+                Computer Science Portfolio
               </p>
             </div>
           </div>

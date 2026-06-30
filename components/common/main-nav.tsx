@@ -33,7 +33,7 @@ export function MainNav({ items, children }: MainNavProps) {
             {siteConfig.brandName}
           </span>
           <span className="mt-1 hidden text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground sm:block">
-            Software Engineer
+            Computer Science Student
           </span>
         </span>
       </Link>

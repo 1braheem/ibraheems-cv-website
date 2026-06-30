@@ -14,9 +14,9 @@ type PagesConfig = {
 export const pagesConfig: PagesConfig = {
   home: {
     title: "Home",
-    description: "Software engineering portfolio for Ibraheem Aziz.",
+    description: "Computer Science portfolio for Ibraheem Aziz.",
     metadata: {
-      title: "Ibraheem Aziz - Software Engineering Portfolio",
+      title: "Ibraheem Aziz - Computer Science Portfolio",
       description:
         "Computer Science student focused on full-stack, mobile, backend, and cybersecurity systems.",
     },

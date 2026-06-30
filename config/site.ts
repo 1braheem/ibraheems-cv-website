@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: "Ibraheem Aziz - Software Engineering Portfolio",
+  name: "Ibraheem Aziz - Computer Science Portfolio",
   brandName: "Ibraheem Aziz",
   subtitle: "Computer Science Student at FAST NUCES",
-  tagline: "Software Engineering Portfolio",
+  tagline: "Computer Science Portfolio",
   authorName: "Ibraheem Aziz",
   username: "ibraheem-aziz",
   location: "Rawalpindi, Pakistan",

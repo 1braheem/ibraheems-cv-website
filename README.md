@@ -6,7 +6,7 @@ Next.js portfolio website for Ibraheem Aziz.
 
 - Site name: Ibraheem Aziz
 - Subtitle: Computer Science Student at FAST NUCES
-- Tagline: Software Engineering Portfolio
+- Tagline: Computer Science Portfolio
 - Website: https://ibraheems-cv-website.vercel.app
 - Primary contact: ibraheemaziz3568@gmail.com
 - LinkedIn: https://www.linkedin.com/in/ibraheem-aziz-693b19322/

@@ -45,7 +45,7 @@ export default function IndexPage() {
     name: siteConfig.authorName,
     url: siteConfig.url,
     image: `${siteConfig.url}${siteConfig.profileImage}`,
-    jobTitle: "Computer Science Student and Software Engineering Intern",
+    jobTitle: "Computer Science Student",
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
@@ -103,8 +103,8 @@ export default function IndexPage() {
               Ibraheem Aziz
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
-              Computer Science student and software engineering intern building
-              practical backend, desktop, mobile, and systems software.
+              Computer Science student building practical backend, desktop,
+              mobile, and systems software.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
