@@ -42,7 +42,7 @@ export default function GithubRedirectCard() {
             <span className="block text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
               LinkedIn
             </span>
-            <span className="mt-1 block font-semibold">ibraheem-aziz</span>
+            <span className="mt-1 block font-semibold">Ibraheem Aziz</span>
           </span>
           <Icons.externalLink className="h-5 w-5 flex-none transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
         </Link>

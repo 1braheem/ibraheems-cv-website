@@ -15,7 +15,6 @@ export const siteConfig = {
   url: "https://ibraheems-cv-website.vercel.app",
   links: {
     linkedin: "https://www.linkedin.com/in/ibraheem-aziz-693b19322/",
-    github: "https://github.com/1braheem",
   },
   ogImage: "/ibraheem-profile.jpg",
   iconIco: "/ibraheem-profile.jpg",

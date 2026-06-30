@@ -19,7 +19,6 @@ export interface ProjectInterface {
   category: ValidCategory[];
   shortDescription: string;
   websiteLink?: string;
-  githubLink?: string;
   techStack: ValidSkills[];
   startDate: Date;
   endDate: Date;
@@ -153,7 +152,6 @@ export const Projects: ProjectInterface[] = [
     category: ["Desktop App", "Backend", "Database"],
     shortDescription:
       "Desktop application for aircraft maintenance, repair, and overhaul operations with service request and inventory tracking.",
-    githubLink: "https://github.com/1braheem/aerologix-mro",
     techStack: ["Java", "Java Swing", "PHP", "MySQL"],
     startDate: new Date("2025-01-01"),
     endDate: new Date("2025-06-01"),
@@ -215,7 +213,6 @@ export const Projects: ProjectInterface[] = [
     category: ["AI", "Automation", "Backend"],
     shortDescription:
       "Desktop voice assistant using Python speech processing, text-to-speech, OpenAI API integration, and automated web navigation.",
-    githubLink: "https://github.com/1braheem/troy-ai-assistant",
     techStack: ["Python", "OpenAI API", "Automation"],
     startDate: new Date("2024-09-01"),
     endDate: new Date("2024-12-01"),
@@ -247,7 +244,6 @@ export const Projects: ProjectInterface[] = [
     category: ["C++", "Game Dev", "Systems"],
     shortDescription:
       "C++ and SFML multiplayer arcade platform with authentication, matchmaking, leaderboards, friends, profiles, saved games, and selectable themes.",
-    githubLink: "https://github.com/1braheem/xonic-arcade",
     techStack: ["C++", "SFML", "Data Structures", "OOP"],
     startDate: new Date("2023-09-01"),
     endDate: new Date("2024-05-01"),
@@ -315,7 +311,6 @@ export const Projects: ProjectInterface[] = [
     category: ["C++", "Game Dev", "Desktop App"],
     shortDescription:
       "Object-oriented SFML arcade collection featuring Snake, Hangman, and Wordle with audio, difficulty settings, achievements, and persistent leaderboards.",
-    githubLink: "https://github.com/1braheem/gameboy-arcade",
     techStack: ["C++", "SFML", "OOP"],
     startDate: new Date("2023-09-01"),
     endDate: new Date("2023-12-01"),
@@ -369,7 +364,6 @@ export const Projects: ProjectInterface[] = [
     category: ["C++", "Game Dev", "Desktop App"],
     shortDescription:
       "A complete C++ recreation of the classic Centipede arcade game with progressive rounds, collision systems, audio, lives, menus, and persistent high scores.",
-    githubLink: "https://github.com/1braheem/centipede-sfml",
     techStack: ["C++", "SFML", "OOP"],
     startDate: new Date("2023-10-01"),
     endDate: new Date("2023-11-01"),
