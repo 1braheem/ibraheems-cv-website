@@ -25,9 +25,9 @@ export const services: ServiceInterface[] = [
       "Security-minded development support for resilient operations, safe data flows, and system dependability.",
   },
   {
-    title: "C++ Systems Programming",
+    title: "Programming Languages",
     description:
-      "Efficient C++ applications using data structures, OOP, POSIX synchronization, SFML, and OpenGL/Glut.",
+      "Python, C++, Java, x86 Assembly, Kotlin, HTML, CSS, and JavaScript across mobile, web, desktop, and systems projects.",
   },
   {
     title: "Desktop Applications",
