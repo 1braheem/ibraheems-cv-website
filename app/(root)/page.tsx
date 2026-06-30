@@ -10,7 +10,6 @@ import ExperienceCard from "@/components/experience/experience-card";
 import ProjectCard from "@/components/projects/project-card";
 import { buttonVariants } from "@/components/ui/button";
 import { certifications } from "@/config/certifications";
-import { featuredContributions } from "@/config/contributions";
 import { education } from "@/config/education";
 import { experiences } from "@/config/experience";
 import { featuredProjects } from "@/config/projects";
@@ -298,38 +297,6 @@ export default function IndexPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection direction="up" className="border-t border-border">
-        <div className="section-shell grid gap-8 lg:grid-cols-[1fr_2fr]">
-          <div>
-            <SectionLabel number="06">Contribution</SectionLabel>
-            <h2 className="section-title">Beyond coursework.</h2>
-          </div>
-          <div className="divide-y divide-border border-y border-border">
-            {featuredContributions.map((contribution) => (
-              <Link
-                href={contribution.link}
-                target="_blank"
-                key={contribution.repo}
-                className="group flex items-start justify-between gap-6 py-6"
-              >
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[hsl(var(--signal))]">
-                    {contribution.repoOwner}
-                  </p>
-                  <h3 className="mt-2 font-heading text-xl">
-                    {contribution.repo}
-                  </h3>
-                  <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-                    {contribution.contibutionDescription}
-                  </p>
-                </div>
-                <Icons.externalLink className="mt-1 h-5 w-5 flex-none transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-              </Link>
-            ))}
           </div>
         </div>
       </AnimatedSection>

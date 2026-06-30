@@ -49,15 +49,6 @@ export const pagesConfig: PagesConfig = {
         "Contact Ibraheem Aziz for software engineering opportunities.",
     },
   },
-  contributions: {
-    title: "Contributions",
-    description: "Technical work, lab contributions, and community teaching initiatives.",
-    metadata: {
-      title: "Contributions",
-      description:
-        "Ibraheem Aziz's technical contributions in backend development, cybersecurity, and computing education.",
-    },
-  },
   resume: {
     title: "Resume",
     description: "Ibraheem Aziz's resume.",
