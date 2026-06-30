@@ -59,10 +59,81 @@ export const Projects: ProjectInterface[] = [
     imageVariant: "logo",
     pagesInfoArr: [
       {
-        title: "Android Social App",
+        title: "Home Feed",
         description:
-          "Kotlin front end with PHP and MySQL backend services for social media workflows.",
-        imgArr: [],
+          "Post feed with stories, engagement controls, saved content, and bottom navigation.",
+        imgArr: ["/projects/socially/01-home-feed.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Story Viewer",
+        description:
+          "Full-screen story playback with progress, account context, and messaging actions.",
+        imgArr: ["/projects/socially/02-story.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Profile and Highlights",
+        description:
+          "User profile with follower statistics, biography, highlights, and a post grid.",
+        imgArr: ["/projects/socially/03-profile.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Post Details",
+        description:
+          "Dedicated post view with account metadata, engagement counts, caption, and save action.",
+        imgArr: ["/projects/socially/04-open-post.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Explore Grid",
+        description:
+          "Discovery workspace with categories, visual search, and mixed-size media tiles.",
+        imgArr: ["/projects/socially/05-explore.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Account Search",
+        description:
+          "User search with account results and online-presence indicators.",
+        imgArr: ["/projects/socially/06-search-users.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Activity Notifications",
+        description:
+          "Following and personal activity views for comments, likes, and follow requests.",
+        imgArr: ["/projects/socially/07-notifications.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Direct Messages",
+        description:
+          "Conversation list with account search, camera access, and new-message controls.",
+        imgArr: ["/projects/socially/08-direct-messages.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Media Chat",
+        description:
+          "Direct conversation supporting text, photos, voice input, attachments, and calls.",
+        imgArr: ["/projects/socially/09-chat-with-photos.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Voice Calling",
+        description:
+          "Voice-call interface with speaker, microphone, camera, and hang-up controls.",
+        imgArr: ["/projects/socially/10-voice-call.webp"],
+        imageVariant: "portrait",
+      },
+      {
+        title: "Video Calling",
+        description:
+          "Video-call interface with local preview and dedicated audio/video controls.",
+        imgArr: ["/projects/socially/11-video-call.webp"],
+        imageVariant: "portrait",
       },
     ],
     descriptionDetails: {

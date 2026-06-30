@@ -46,9 +46,10 @@ export default function ProjectMedia({
             ? "object-contain p-8"
             : isFit
               ? "object-contain"
+              : isPortrait
+                ? "object-contain"
               : cn(
                   "object-cover hover:scale-[1.02]",
-                  isPortrait && "object-[center_28%]"
                 )
         )}
         priority={priority}

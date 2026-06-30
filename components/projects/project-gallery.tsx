@@ -40,12 +40,23 @@ export default function ProjectGallery({
         Project Screens
       </h2>
 
-      <div className="mt-8" aria-live="polite">
+      <div
+        className={cn(
+          "mt-8",
+          activeScreen.variant === "portrait" && "mx-auto max-w-[430px]"
+        )}
+        aria-live="polite"
+      >
         <ProjectMedia
           src={activeScreen.src}
           alt={`${projectName} - ${activeScreen.title}`}
           variant={activeScreen.variant ?? "cover"}
-          className="aspect-video w-full"
+          className={cn(
+            "w-full",
+            activeScreen.variant === "portrait"
+              ? "aspect-[9/16] max-h-[76vh]"
+              : "aspect-video"
+          )}
           priority
         />
         <div className="grid gap-2 border-x border-b border-border p-5 sm:grid-cols-[0.65fr_1.35fr]">
