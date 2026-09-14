@@ -47,7 +47,7 @@ export const experiences: ExperienceInterface[] = [
       "Git",
       "GitHub",
     ],
-    logo: "/ibraheem-profile.jpg",
+    logo: "/experience/divedeepai.png",
   },
   {
     id: "ncra-uav-dependability-lab",
@@ -68,7 +68,7 @@ export const experiences: ExperienceInterface[] = [
       "Practiced security-minded development in a dependability lab setting.",
     ],
     skills: ["Backend", "Cybersecurity", "Python", "Database Systems"],
-    logo: "/ibraheem-profile.jpg",
+    logo: "/experience/ncra-uav-dependability-lab.jpeg",
   },
   {
     id: "community-computing-initiative",
