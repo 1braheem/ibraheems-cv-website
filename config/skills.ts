@@ -8,31 +8,36 @@ export interface skillsInterface {
 
 export const skillsUnsorted: skillsInterface[] = [
   {
+    name: "AI & Machine Learning",
+    description:
+      "Machine Learning, Deep Learning, PyTorch, Neural Networks, Regression, Classification, Clustering, Reinforcement Learning, Embeddings, Similarity Search",
+    icon: Icons.sparkles,
+  },
+  {
+    name: "Backend & APIs",
+    description: "Python, FastAPI, RESTful APIs, PHP, SQL, MySQL",
+    icon: Icons.settings,
+  },
+  {
+    name: "Programming Languages",
+    description: "Python, C++, Java, Kotlin, JavaScript, HTML, CSS, x86 Assembly",
+    icon: Icons.laptop,
+  },
+  {
+    name: "Tools & Deployment",
+    description: "Docker, Git, GitHub, Android Studio, SFML, OpenGL/Glut",
+    icon: Icons.settings,
+  },
+  {
     name: "App & Web Development",
     description:
       "Kotlin, Android Studio, RESTful APIs, PHP, HTML, CSS, JavaScript",
     icon: Icons.laptop,
   },
   {
-    name: "Programming",
-    description: "C++, Python, Java, x86 Assembly",
-    icon: Icons.laptop,
-  },
-  {
-    name: "Tools & Databases",
-    description: "SQL, MySQL, Docker, SFML, OpenGL/Glut",
-    icon: Icons.settings,
-  },
-  {
-    name: "Backend & Cybersecurity",
-    description:
-      "Data handling, performance optimization, multi-agent coordination, secure operations",
-    icon: Icons.sparkles,
-  },
-  {
     name: "Core CS Concepts",
     description:
-      "Data Structures, OOP, Operating Systems, Database Systems, Computer Networks",
+      "Data Structures, OOP, Operating Systems, Computer Networks, Secure Coding",
     icon: Icons.gitRepoIcon,
   },
 ];

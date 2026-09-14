@@ -11,7 +11,7 @@ export const siteConfig = {
   phone: "+92 332 8540999",
   website: "ibraheemaziz.me",
   description:
-    "Computer Science student focused on full-stack, mobile, backend, and cybersecurity systems.",
+    "Computer Science student focused on AI/ML, backend systems, mobile apps, and practical software projects.",
   url: "https://ibraheemaziz.me",
   links: {
     linkedin: "https://www.linkedin.com/in/ibraheem-aziz-693b19322/",
@@ -24,7 +24,11 @@ export const siteConfig = {
   keywords: [
     "Ibraheem Aziz",
     "Computer Science Student",
-    "Software Engineering Intern",
+    "ML Engineering Intern",
+    "Machine Learning",
+    "Deep Learning",
+    "PyTorch",
+    "FastAPI",
     "Backend Development",
     "Cybersecurity",
     "Android Development",

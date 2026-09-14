@@ -96,14 +96,14 @@ export default function IndexPage() {
 
           <div className="max-w-4xl pb-2">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-white/70">
-              Backend · Systems · Mobile
+              AI/ML · Backend · Mobile
             </p>
             <h1 className="max-w-3xl font-heading text-5xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-8xl">
               Ibraheem Aziz
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
-              Computer Science student building practical backend, desktop,
-              mobile, and systems software.
+              Computer Science student working across machine learning,
+              backend systems, mobile apps, and practical software projects.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
@@ -153,11 +153,12 @@ export default function IndexPage() {
           <div>
             <SectionLabel number="01">Capabilities</SectionLabel>
             <h2 className="section-title">
-              Turning concepts into working software.
+              Building practical AI and backend systems.
             </h2>
             <p className="section-copy">
-              Practical software work grounded in computer science fundamentals,
-              maintainable implementation, and dependable user flows.
+              Practical software work grounded in machine learning, backend
+              engineering, computer science fundamentals, and dependable user
+              flows.
             </p>
           </div>
           <div className="divide-y divide-border border-y border-border">
@@ -209,11 +210,11 @@ export default function IndexPage() {
           <div>
             <SectionLabel number="03">Experience</SectionLabel>
             <h2 className="section-title">
-              Internship experience and community service.
+              AI/ML internship, backend work, and community service.
             </h2>
             <p className="section-copy">
-              Software development, backend engineering, and cybersecurity work
-              across research and community environments.
+              Machine learning, backend engineering, cybersecurity, and
+              community work across internship and local service environments.
             </p>
             <Link href="/experience" className="text-link mt-7 w-fit">
               Full timeline <Icons.chevronRight className="h-4 w-4" />

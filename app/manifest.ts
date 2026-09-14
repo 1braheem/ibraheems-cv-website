@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Ibraheem Aziz - Computer Science Portfolio",
     short_name: "Ibraheem Aziz",
     description:
-      "Computer Science student focused on full-stack, mobile, backend, and cybersecurity systems.",
+      "Computer Science student focused on AI/ML, backend systems, mobile apps, and practical software projects.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
@@ -25,7 +25,7 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     categories: [
       "portfolio",
-      "software engineering",
+      "machine learning",
       "android",
       "backend",
       "cybersecurity",

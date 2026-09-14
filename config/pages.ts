@@ -18,17 +18,17 @@ export const pagesConfig: PagesConfig = {
     metadata: {
       title: "Ibraheem Aziz - Computer Science Portfolio",
       description:
-        "Computer Science student focused on full-stack, mobile, backend, and cybersecurity systems.",
+        "Computer Science student focused on AI/ML, backend systems, mobile apps, and practical software projects.",
     },
   },
   skills: {
     title: "Skills",
     description:
-      "Technical strengths across mobile, web, backend, systems programming, and databases.",
+      "Technical strengths across AI/ML, backend, mobile, web, systems programming, and databases.",
     metadata: {
       title: "Skills",
       description:
-        "Ibraheem Aziz's software engineering skills across Kotlin, Android, C++, Python, Java, PHP, SQL, Docker, and core computer science.",
+        "Ibraheem Aziz's skills across Python, PyTorch, FastAPI, Docker, Kotlin, Android, C++, Java, PHP, SQL, and core computer science.",
     },
   },
   projects: {
@@ -42,11 +42,11 @@ export const pagesConfig: PagesConfig = {
   },
   contact: {
     title: "Contact",
-    description: "Let's connect about software engineering, backend, mobile, or cybersecurity work.",
+    description: "Let's connect about AI/ML, backend, mobile, or cybersecurity work.",
     metadata: {
       title: "Contact",
       description:
-        "Contact Ibraheem Aziz for software engineering opportunities.",
+        "Contact Ibraheem Aziz for AI/ML, backend, and software project opportunities.",
     },
   },
   resume: {
@@ -60,11 +60,11 @@ export const pagesConfig: PagesConfig = {
   experience: {
     title: "Experience",
     description:
-      "Hands-on backend, cybersecurity, research lab, and community teaching experience.",
+      "Hands-on AI/ML, backend, cybersecurity, internship, and community teaching experience.",
     metadata: {
       title: "Experience",
       description:
-        "Ibraheem Aziz's software engineering and internship experience timeline.",
+        "Ibraheem Aziz's AI/ML, backend, cybersecurity, and internship experience timeline.",
     },
   },
 };

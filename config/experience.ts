@@ -17,6 +17,39 @@ export interface ExperienceInterface {
 
 export const experiences: ExperienceInterface[] = [
   {
+    id: "divedeepai",
+    position: "ML Engineering Intern",
+    company: "DiveDeepAI",
+    location: "Remote",
+    startDate: new Date("2026-07-01"),
+    endDate: new Date("2026-09-01"),
+    duration: "July 2026 - September 2026",
+    description: [
+      "Worked on machine learning and deep learning workflows, including model development, evaluation, and integration.",
+      "Developed ML-focused backend services using Python and FastAPI.",
+      "Worked with PyTorch, pretrained models, embeddings, and similarity-based machine learning systems.",
+      "Used Docker for containerizing machine learning applications and supporting deployment workflows.",
+    ],
+    achievements: [
+      "Built backend services for machine learning workflows using FastAPI.",
+      "Supported model deployment workflows with Docker and Git/GitHub.",
+      "Applied embeddings and similarity search to practical ML systems.",
+    ],
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "PyTorch",
+      "FastAPI",
+      "Docker",
+      "ML Model Deployment",
+      "Embeddings",
+      "Similarity Search",
+      "Git",
+      "GitHub",
+    ],
+    logo: "/ibraheem-profile.jpg",
+  },
+  {
     id: "ncra-uav-dependability-lab",
     position: "Backend & Cybersecurity Intern",
     company: "NCRA-UAV Dependability Lab",

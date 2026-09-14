@@ -5,19 +5,19 @@ export interface ServiceInterface {
 
 export const services: ServiceInterface[] = [
   {
-    title: "Android App Development",
+    title: "AI & Machine Learning",
     description:
-      "Kotlin and Android Studio app development with clean UI flows, REST API integration, and database-backed features.",
+      "Machine learning and deep learning work with PyTorch, embeddings, similarity search, and model evaluation.",
+  },
+  {
+    title: "ML Backend Systems",
+    description:
+      "Python and FastAPI services for ML workflows, REST API integration, Docker deployment, and database-backed features.",
   },
   {
     title: "Full-Stack Web Development",
     description:
       "PHP, MySQL, HTML, CSS, and JavaScript systems for practical products, dashboards, and data-driven workflows.",
-  },
-  {
-    title: "Backend Systems",
-    description:
-      "Backend programming, data handling, API logic, performance optimization, and reliability-focused implementation.",
   },
   {
     title: "Cybersecurity Support",
