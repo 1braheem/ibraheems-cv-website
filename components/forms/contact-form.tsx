@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { siteConfig } from "@/config/site";
 import { useModalStore } from "@/hooks/use-modal-store";
 
 const formSchema = z.object({
@@ -46,6 +47,19 @@ export function ContactForm() {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    const fallbackSubject = encodeURIComponent(
+      `Portfolio message from ${values.name}`
+    );
+    const fallbackBody = encodeURIComponent(
+      [
+        `Name: ${values.name}`,
+        `Email: ${values.email}`,
+        "",
+        values.message,
+      ].join("\n")
+    );
+    const fallbackMailto = `mailto:${siteConfig.email}?subject=${fallbackSubject}&body=${fallbackBody}`;
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -69,10 +83,11 @@ export function ContactForm() {
       throw new Error("Unable to deliver message");
     } catch (err) {
       console.log("Err!", err);
+      window.location.href = fallbackMailto;
       storeModal.onOpen({
-        title: "Message not sent",
+        title: "Email draft opened",
         description:
-          "The contact form is temporarily unavailable. Please email me directly instead.",
+          "The form could not send automatically, so I opened a direct email draft with your message.",
         icon: Icons.infoMark,
       });
     }
